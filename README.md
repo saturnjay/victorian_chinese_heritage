@@ -1,119 +1,189 @@
-# Victorian Chinese Heritage Research Package
+# Victorian Chinese Heritage Map
 
-**Documentary evidence reviewed:** 28 July 2026  
-**Inventory size:** 73 mapped findings  
-**Heritage Victoria 2022 core:** 19 findings
+An interactive research map documenting places connected with Chinese migration, work, community life, religion, burial, commemoration and heritage interpretation across Victoria.
 
-The current evidence audit reviewed all 73 findings and live-checked 131 distinct cited URLs. Seventy-one findings are verified against current documentary evidence; one is retained as documentary history without a verified surviving feature, and one remains a field-verification lead. Reusable, human-reviewed photographs were located for 18 findings (17 unique image files). This is source verification, not a statutory certificate or physical site inspection.
+- **Evidence reviewed through:** 30 July 2026
+- **Mapped findings:** 86
+- **Heritage Victoria 2022 core selection:** 19
+- **Documentary verification:** 79 verified, 1 documentary-only, 6 requiring field verification
+- **Findings with registered photographs:** 41
 
-## Files
+The project is a working compilation of publicly documented heritage, not a statutory register, heritage certificate or physical inspection of every site. Coordinates are research and visitor-orientation points rather than cadastral or statutory boundaries.
 
-- `victorian_chinese_heritage_map.html` — interactive searchable Leaflet map with clickable histories, protection notes, access cautions and source links.
-- `victorian_chinese_heritage_inventory.xlsx` — polished 39-field research workbook with Overview, Inventory, Sources, Methodology, Data Dictionary and Map Legend sheets.
-- `victorian_chinese_heritage_inventory.csv` — UTF-8 version of the complete inventory.
-- `victorian_chinese_heritage.geojson` — point layer for GIS and web-mapping use, retaining all research fields as properties.
-- `victorian_chinese_heritage_sources.csv` — normalised one-URL-per-row source register showing every linked finding.
-- `verification/` — per-finding verification outcomes, full URL response audit, corrected-link log, image metadata, rights information and machine-readable summaries.
-- `assets/verified-findings/` — locally saved, reusable finding photographs with attribution recorded in `verification/image_metadata.csv`.
-- `victorian_chinese_heritage_verified_package_2026-07-28.zip` — portable evidence package containing the verified data, photographs, metadata and updated map.
-- `qa_report.txt` — automated validation summary generated with this release.
-- `leaflet-1.9.4.js` and `leaflet-1.9.4.css` — pinned local map engine files, allowing the explorer itself to start without a CDN.
-- `leaflet.markercluster-1.5.3.js` and `MarkerCluster-1.5.3.css` — pinned local clustering files for dense groups of findings.
+## Interface languages
 
-## Coverage
+The explorer interface supports English, Simplified Chinese (`zh-Hans`) and Traditional Chinese (`zh-Hant`). English remains the canonical language for place names and item-level research records so they can be matched to official registers and cited sources.
 
-The inventory is a comprehensive working compilation of publicly documented Chinese heritage in Victoria, not a legal or final exhaustive register. It includes:
+Translation wording, provenance and human-review status are recorded in [TRANSLATION_AUDIT.md](./TRANSLATION_AUDIT.md). Update the corresponding JavaScript catalogue whenever an audited translation changes.
 
-- all 19 places and objects on Heritage Victoria's 2022 Chinese-heritage selection page;
-- state-registered buildings, objects, cemeteries, landscapes and archaeological places;
-- Victorian Heritage Inventory and other documented historical archaeology;
-- Chinese cemetery sections, separate burial grounds, funerary burners, headstones, memorials and documented unmarked graves;
-- temples, churches, missions, association premises, residences, commercial buildings and urban precincts;
-- mining camps, villages, tunnels, pig ovens, kilns, market gardens and industrial sites;
-- museums, archives, public monuments, reconstructed places and well-documented former sites.
+## Latest research update
 
-Heritage Victoria states that its 2022 selection is not exhaustive. The Victorian Heritage Inventory likewise notes that its archaeological listing is not comprehensive and that historical archaeological sites can be protected whether or not they are already listed.
+The map began this review with 73 records. Two Chinese funerary-burner leads from the University of Idaho census were added as VCH-074 and VCH-075, bringing the interim total to 75.
 
-## Location and coordinate method
+A subsequent comparison with [Scattered Legacy](https://www.scatteredlegacy.org.au) examined 112 Victorian catalogue records:
 
-Every record has decimal-degree WGS84 latitude and longitude plus two explanatory fields:
+- 45 were already represented by a map finding or an equivalent feature;
+- 11 were assessed as the strongest potential additions;
+- 24 were retained as documentary leads requiring more evidence before mapping;
+- the remaining records primarily provide collection, object or historical context, with four excluded or questioned because of uncertain attribution, location or Victorian relevance.
 
-- **Coordinate precision** — published point, address/visitor point, precinct centroid, landscape vicinity, former-site vicinity, generalised sensitive location, and similar wording.
-- **Coordinate basis / note** — what the point represents and what it does not represent.
+All 11 strongest candidates have now been added as VCH-076–VCH-086. Eight have sufficient evidence for verified public-heritage status. Three are mapped cautiously as documentary leads with generalised coordinates and field-verification warnings.
 
-Coordinates are orientation points, not survey or statutory boundaries. Sensitive archaeology, burial grounds and reports of exposed artefacts are deliberately generalised where appropriate. Multiple records at the same visitor destination can be offset by a few metres on the HTML map solely so every marker can be clicked; pop-ups report the stored coordinates.
+| ID | Added finding | Current assessment |
+|---|---|---|
+| VCH-076 | Avoca Chinese Garden | Verified public heritage |
+| VCH-077 | Creswick Chinese Camp site at Calembeen Park | Verified public heritage |
+| VCH-078 | Kong Meng Historic Reserve | Verified public heritage |
+| VCH-079 | Thomas Coto gravestone, Sale Cemetery | Verified public heritage |
+| VCH-080 | Bowmans Forest Cemetery Chinese and Strangers section | Verified public heritage |
+| VCH-081 | Chiltern Cemetery Chinese section | Verified public heritage |
+| VCH-082 | Myrtleford Pioneer Cemetery Chinese section and memorial | Verified public heritage |
+| VCH-083 | Stanley Chinese alluvial goldfields | Documentary lead — field verification required |
+| VCH-084 | Stanley Pioneer Cemetery Chinese burials | Documentary lead — field verification required |
+| VCH-085 | Wangaratta Cemetery Chinese and Strangers section | Verified public heritage |
+| VCH-086 | Harry Goon's Hut and Chinese market garden camp, Wodonga | Documentary lead — field verification required |
 
-## Inclusion tiers
+The Peter Ah Sen Saw Mill record, VCH-004, also now includes the Victorian Heritage Database photograph supplied for the project.
+
+## Current coverage
+
+### Verification status
+
+- **Verified:** 79
+- **Documentary only:** 1
+- **Field verification required:** 6
+
+Verification here means that the place identity, association or published evidence was matched to the cited documentary sources. It does not mean that the site was physically inspected in 2026.
+
+### Inclusion tiers
 
 - **Core statutory — Heritage Victoria 2022 selection:** 19
+- **Verified public heritage:** 53
+- **Verified public heritage / modern interpretation:** 1
 - **Documented former / reconstructed heritage:** 6
 - **Documented former / unlocated heritage:** 1
+- **Documentary lead — field verification required:** 5
 - **Reported / field verification needed:** 1
-- **Verified public heritage:** 45
-- **Verified public heritage / modern interpretation:** 1
 
-## Findings by region
+### Findings by region
 
-- **Gippsland:** 3
-- **Goldfields:** 35
-- **Grampians:** 4
-- **High Country:** 12
+- **Goldfields:** 40
+- **High Country:** 19
 - **Metropolitan Melbourne:** 17
+- **Gippsland:** 4
+- **Grampians:** 4
 - **Murray:** 1
 - **Wimmera Mallee:** 1
 
-## Findings by map group
+### Findings by map group
 
+- **Cemeteries & funerary heritage:** 32
+- **Mining & archaeology:** 13
 - **Built heritage:** 9
-- **Cemeteries & funerary heritage:** 24
-- **Industry & work:** 1
-- **Market gardens & industry:** 6
-- **Memorials & public art:** 5
-- **Mining & archaeology:** 11
-- **Museums, collections & interpretation:** 5
 - **Temples & religion:** 9
-- **Urban precincts & community places:** 3
+- **Market gardens & industry:** 7
+- **Memorials & public art:** 6
+- **Museums, collections & interpretation:** 5
+- **Urban precincts & community places:** 4
+- **Industry & work:** 1
+
+## What the map includes
+
+The inventory brings together:
+
+- all 19 places and objects identified on Heritage Victoria's 2022 Chinese-heritage selection page;
+- Victorian Heritage Register places, Victorian Heritage Inventory archaeology and local heritage evidence;
+- Chinese cemetery sections, separate burial grounds, funerary burners, headstones, memorials and documented unmarked graves;
+- temples, churches, missions, association premises, residences, shops and urban precincts;
+- mining camps, landscapes, tunnels, pig ovens, kilns, market gardens and industrial sites;
+- museums, archives, public monuments, reconstructed places and well-documented former sites.
+
+Heritage Victoria states that its published Chinese-heritage selection is not exhaustive. Historical archaeological places may also be protected even when they have not yet been entered in the Victorian Heritage Inventory.
+
+## Repository contents
+
+- `index.html` — the Victorian Chinese Heritage portal homepage.
+- `people.html` — researched biographies and cemetery-record names.
+- `places.html` — the interactive map and embedded 86-record research dataset.
+- `stories.html` — a concise chronology of major events and contemporary Chinese Victoria.
+- `portal.html` — the community correction and contribution form.
+- `donation.html` — official CCCAV donation details and the portal improvement case for support.
+- `portal-theme.css` and `portal.js` — shared portal design and navigation/form behaviour.
+- `assets/heritage-images/` — images used in the historical overview and featured interpretation.
+- `assets/verified-findings/` — local research copies of finding photographs used by the map.
+- `research_outputs/scattered_legacy_victorian_map_audit_2026-07-30.xlsx` — the Scattered Legacy comparison workbook, including the 75-record pre-addition map baseline, 112-record Victorian audit, candidate assessment, image metadata, key photographs and methodology.
+- `research_outputs/scattered_legacy_key_photos/` — research-reference copies of selected Scattered Legacy images.
+- `cemetery_records/` — source captures, extracted cemetery data, name tables and supporting scripts for the cemetery research stream.
+- `scripts/build_scattered_legacy_audit.py` — reproducible workbook-generation script for the Scattered Legacy audit.
+- `scripts/build_map_interaction_gif.swift` — dependency-free macOS renderer for the animated map interaction demonstration.
+- `media/map-interaction-demo.gif` — short demonstration of chronological navigation, search, map focus, finding details and the Walk from Robe route.
+- `leaflet-1.9.4.js`, `leaflet-1.9.4.css`, `leaflet.markercluster-1.5.3.js` and `MarkerCluster-1.5.3.css` — pinned local mapping and marker-clustering libraries.
+
+The Scattered Legacy workbook is an audit snapshot created before VCH-076–VCH-086 were added. It intentionally retains the earlier 75-record baseline so the evidence and selection process remain traceable.
+
+## Using the webpage
+
+Open `index.html` in a modern browser or serve the repository through GitHub Pages or another HTTPS static host. Open `places.html` for the full explorer. The research records, filters and detail panels are embedded in that page. Background map tiles and external source links require an internet connection.
+
+Visitors can:
+
+- search names, locations, histories and register identifiers;
+- filter by heritage group, region, inclusion tier and confidence;
+- select markers or use the chronological finding index;
+- review historical summaries, surviving evidence, protection, access and sensitivity notes;
+- inspect source links, verification notes and photograph attribution.
+
+The map offsets markers that share the same visitor point by a few metres so that each record remains clickable. The stored coordinates shown in the record are not changed.
+
+## Coordinate method
+
+Every finding records WGS84 latitude and longitude together with:
+
+- **Coordinate precision** — for example, published point, visitor point, site vicinity, landscape vicinity or generalised sensitive location.
+- **Coordinate basis / note** — an explanation of what the point represents and what it does not represent.
+
+Sensitive archaeology, burial places, uncertain former sites and private-property leads are generalised where appropriate. Do not use the points as survey coordinates, property boundaries or locations for ground disturbance.
 
 ## Source grading
 
 - **A:** statutory register, government dataset or official custodian/operator.
-- **B:** council, cemetery trust, museum database, academic or specialist heritage project.
-- **C:** local history, architectural guide, visitor guide or historical society; useful but should be cross-checked for legal or parcel-level use.
+- **B:** council, cemetery trust, museum, academic source or specialist heritage project.
+- **C:** local history, historical society, architectural guide or visitor source that should be corroborated for legal or parcel-level use.
 - **D:** community report or field lead requiring professional verification.
 
-The source-grade wording in each record may combine grades when, for example, a statutory identity is paired with a secondary coordinate.
+A record may use a combined grade where, for example, an authoritative place identity is paired with a secondary visitor coordinate.
+
+## Photographs and rights
+
+The map currently registers photographs for 41 findings. Each displayed photograph includes its source, stated creator or courtesy, relevance and available licence information.
+
+Some files are reusable under an identified open licence; others are research-reference copies for which reuse permission has not been established. In particular, inclusion in Scattered Legacy or another catalogue does not by itself establish permission to republish an image. Check the original source, named photographer, institution or rights holder before public reuse.
+
+The map's image record for each Scattered Legacy addition explicitly states **“Reuse permission not established.”**
 
 ## Responsible and lawful use
 
-A public point does not grant public access. Confirm current ownership, opening hours, closures, cultural protocols and permit requirements before visiting. Do not:
+A public map point does not grant public access. Confirm ownership, opening hours, closures, cultural protocols and permit requirements before visiting. Do not:
 
 - trespass on private or restricted land;
 - disturb graves, headstones, funerary structures or memorials;
 - enter mine shafts, unstable workings or fenced archaeological areas;
 - dig, probe, metal-detect, remove pottery or collect artefacts;
 - treat a reconstructed museum feature as original nineteenth-century fabric;
-- rely on this package as a heritage certificate or cadastral boundary.
+- rely on this project as a heritage certificate or statutory boundary.
 
-For statutory decisions, consult Heritage Victoria, the Victorian Heritage Database, the relevant council planning scheme, the land manager, cemetery trust or community custodian.
+For statutory decisions, consult [Heritage Victoria](https://www.heritage.vic.gov.au), the [Victorian Heritage Database](https://vhd.heritagecouncil.vic.gov.au), the relevant council planning scheme, land manager, cemetery trust or community custodian.
 
-## Using the webpage
+## Known limitations and next research priorities
 
-Keep the four local Leaflet files beside `victorian_chinese_heritage_map.html`, then open the HTML file in a modern browser. For the most dependable background-map loading, publish the folder to an HTTPS website or open it through a local static web server.
-
-The page is designed as an educational journey through Chinese Victorian history. Begin with the four era cards, or use the Previous and Next controls above the map to move through the findings in chronological order. When focus is not inside a form field, the Left and Right Arrow keys provide the same navigation. The chronological index, filters and map remain coordinated, while each detail panel explains the date, historical significance, evidence quality and source links for the selected place.
-
-Before the Learning Path, a visual history overview combines a documentary photo mosaic, three evidence milestones and a five-part timeline from the pre-gold-rush presence to contemporary Victoria. Its research trail is recorded in `verification/history_overview_sources.csv`.
-
-The research data, filters and detail panels are embedded in the HTML and remain usable offline. Background tiles require an internet connection. If both providers are unavailable, the explorer automatically retains its markers on a neutral background and offers a retry action. Search covers all fields, including place names, locations, histories and register identifiers; map position changes only when a visitor chooses a finding, Home or Fit results.
-
-## Known limitations
-
-- Public registers and local heritage studies continue to change.
-- Several former sites require archival mapping or professional archaeological survey before a parcel or feature can be located precisely.
-- Some cemetery counts are historical estimates and many burials have no visible marker.
-- Operating hours and restoration status can change after 28 July 2026.
-- A small number of community-reported or local-memory sites are retained as clearly labelled verification leads rather than confirmed archaeology.
+- Public registers, local studies, access conditions and site condition continue to change.
+- Several former places require archival mapping, landowner consultation or archaeological survey before an exact parcel or surviving feature can be identified.
+- Some cemetery burial counts are historical estimates, and many burials have no visible marker.
+- VCH-083, VCH-084 and VCH-086 use cautious or generalised points pending field and custodian verification.
+- Three earlier findings also remain field-verification records, and one former place is retained for documentary value without a verified surviving feature.
+- The 24 Scattered Legacy documentary leads—many of them former joss houses—require stronger location and survival evidence before they should become separate map points.
+- Image permissions must be resolved individually before photographs without a confirmed reuse licence are republished outside the research context.
 
 ## Suggested citation
 
-Jian Chen and the Chinese Community Council of Australia (Victoria), *Victorian Chinese Heritage: A History Measured in Generations*, 73 mapped findings, documentary evidence reviewed 28 July 2026. Use the primary and additional source URLs attached to each finding when citing an individual place. See [www.cccav.org.au](https://www.cccav.org.au).
+Jian Chen and the Chinese Community Council of Australia (Victoria), *Victorian Chinese Heritage Map: A History Measured in Generations*, 86 mapped findings, documentary evidence reviewed through 30 July 2026. Cite the primary and additional source URLs attached to an individual finding when referring to that place. See [www.cccav.org.au](https://www.cccav.org.au).

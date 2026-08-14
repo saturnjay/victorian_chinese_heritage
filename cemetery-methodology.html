@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Methodology for the Victorian cemetery record search: sources, confidence grading and limitations."><title>Cemetery Methodology · Victorian Chinese Heritage</title><link rel="stylesheet" href="./portal-theme.css"></head>
+<body class="portal-page methodology-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="portal-header"><nav class="portal-nav" aria-label="Main navigation"><a class="portal-brand" href="./index.html"><img src="./cccav-logo.png" alt="CCCAV"><span>Victorian Chinese Heritage Project</span></a><button class="menu-toggle" type="button" aria-expanded="false">Menu</button><div class="portal-menu"><a href="./people.html">People</a><a href="./places.html">Places</a><a href="./stories.html">Stories</a><a href="./portal.html">Research</a><a href="./donation.html">Donation</a><div class="language-wrap"><button class="language-button" type="button" aria-expanded="false">EN / 中文</button><div class="language-popover" hidden><a href="./cemetery-methodology.html">English</a><a href="./places.html?lang=zh-Hans" lang="zh-Hans">简体中文 · Map</a><a href="./places.html?lang=zh-Hant" lang="zh-Hant">繁體中文 · 地圖</a></div></div></div></nav></header>
+  <main id="main">
+    <section class="page-hero"><div class="page-hero__inner"><span class="eyebrow">Research · cemetery records</span><h1>Victorian cemetery record search.</h1><p>The website and register search behind the names index, covering all 26 cemetery and funerary findings on the project map. It records the downloaded source material, normalised full-register exports, and a conservative index of Chinese names or likely Chinese-name candidates.</p></div></section>
+    <section class="section"><span class="section-kicker">Main result</span><h2 class="section-title">720 sourced rows from 10 cemetery and object sources.</h2><p class="section-intro">The combined extracted index is published as <code>extracted/chinese_names.csv</code> inside the cemetery records folder.</p>
+      <div class="research-principles">
+        <article><h3>657 high-confidence rows</h3><p>An explicit Chinese-grave dataset, Chinese cemetery section, source annotation, Chinese characters, or a recorded China, Canton or Hong Kong birthplace.</p></article>
+        <article><h3>63 medium-confidence rows</h3><p>The source context and a historical Chinese-form name support the match, but the register does not explicitly record ethnicity.</p></article>
+        <article><h3>694 distinct displayed name strings</h3><p>Not necessarily 694 distinct individuals: spelling variants, aliases and duplicate historical registrations may exist.</p></article>
+        <article><h3>Largest source sets</h3><p>Melbourne General Cemetery (534 rows), Ballarat Old and early Ballarat records (82), Echuca (47), Yackandandah (25), Creswick (14) and Whroo (12). Individual named evidence was also found for Beechworth, Linton, Moliagul/Inkerman and the Bi Jiang tombstone. The Melbourne total includes Lee Kee Yook, whose CAFHOV record has no title but identifies the person in its “Other names” field.</p></article>
+      </div>
+      <p class="section-intro">No person has been classified from a modern surname alone. Medium-confidence rows should be verified against the original record before publication as Chinese biographical data.</p>
+    </section>
+    <section class="section" style="padding-top:0"><span class="section-kicker">Folder guide</span><h2 class="section-title">Where the evidence lives.</h2><div class="methodology-list">
+      <div><code>cemetery_source_manifest.csv</code><p>One row for every cemetery finding, with the website attempted, access outcome, files saved and recommended next route.</p></div>
+      <div><code>raw/</code><p>Source files as downloaded: official spreadsheets and JSON queries, website pages, reports and memorial photographs.</p></div>
+      <div><code>raw/cafhov_mgc_collection.csv</code><p>CAFHOV’s complete Melbourne General Cemetery metadata, including name variants, pronunciation, ancestral-origin fields, dates, plots, notes and photograph links.</p></div>
+      <div><code>extracted/chinese_names.csv</code><p>The combined, source-attributed name index.</p></div>
+      <div><code>extracted/*full_register.csv</code><p>Cemetery-specific CSV files and convenient UTF-8 conversions of the downloaded data.</p></div>
+      <div><code>scripts/extract_names.py</code><p>Reproducible extraction and normalisation code.</p></div>
+    </div></section>
+    <section class="section" style="padding-top:0"><span class="section-kicker">Important limitations</span><h2 class="section-title">What “Chinese” means in the output.</h2><p class="section-intro">“Chinese” means that the historical source explicitly says so, or that the row is a candidate supported by the documented evidence basis. It does not establish a person’s identity by itself. Cemetery registers can contain errors, Anglicised spellings, reversed name order, aliases and repeated entries.</p>
+      <ul class="methodology-notes">
+        <li>Creswick Compartment 6 is historically associated mainly with Chinese burials, but it is a mixed compartment. Its name-pattern matches are therefore marked medium confidence. The Whroo and non-explicit Echuca matches are marked the same way.</li>
+        <li>The early Ballarat transcription preserves an offensive historical classification in some source cells. The combined CSV mentions that term only when explaining the verbatim evidence used for selection; it is not present-day language endorsed by this project.</li>
+        <li>Several custodians expose only individual searches or paid or manual research services. No attempt was made to bypass access controls or scrape a service that did not offer a supported public export. These unresolved sites are clearly identified in the manifest.</li>
+      </ul>
+    </section>
+    <section class="section" style="padding-top:0"><span class="section-kicker">Principal online sources</span><h2 class="section-title">Where the records were consulted.</h2><div class="research-source-list">
+      <a href="https://cafhov.github.io/chinesegraves/data.html" target="_blank" rel="noopener noreferrer">Chinese Graves at Melbourne General Cemetery</a>
+      <a href="https://cemetery.yackandandah.com/burial-search/" target="_blank" rel="noopener noreferrer">Yackandandah Cemetery burial search</a>
+      <a href="https://apps.byond.cloud/deceased-search/dba1e99a-efb0-4f4d-e4eb-aeee2f7d77c3" target="_blank" rel="noopener noreferrer">Creswick Cemetery deceased search</a>
+      <a href="https://www.creswickcemetery.com.au/history/chinese/" target="_blank" rel="noopener noreferrer">Creswick Chinese cemetery history</a>
+      <a href="https://www.echucacemetery.com/cemetery-records/" target="_blank" rel="noopener noreferrer">Echuca Cemetery records</a>
+      <a href="https://whroocemeterytrust.org/" target="_blank" rel="noopener noreferrer">Whroo Cemetery interment register</a>
+      <a href="https://victoriancollections.net.au/items/5badd55821ea690b78bf2a48" target="_blank" rel="noopener noreferrer">Ballarat early burial spreadsheet catalogue record</a>
+      <a href="https://beechworthcemetery.com.au/family-research/" target="_blank" rel="noopener noreferrer">Beechworth Cemetery family research</a>
+      <a href="https://www.monumentaustralia.org/themes/landscape/settlement/display/95588-chinese-pioneers-of-linton" target="_blank" rel="noopener noreferrer">Linton Chinese Pioneers memorial</a>
+      <a href="https://dunollymuseumsite.wordpress.com/inkerman-cemetery-inside-the-moliagul-cemetery/" target="_blank" rel="noopener noreferrer">Dunolly Museum: Inkerman Cemetery inside Moliagul Cemetery</a>
+    </div></section>
+    <section class="section" style="padding-top:0"><span class="section-kicker">Rebuilding the extracts</span><h2 class="section-title">Reproduce the name index.</h2><p class="section-intro">The script uses Python’s standard library plus <code>xlrd</code> for the two legacy <code>.xls</code> workbooks:</p><pre class="methodology-code">python3 -m pip install -r cemetery_records/scripts/requirements.txt
+python3 cemetery_records/scripts/extract_names.py</pre><p class="section-intro">The source files are retained, so every selected row can be independently checked and the matching policy can be made broader or narrower later.</p></section>
+  </main>
+  <footer class="portal-footer portal-footer--research"><div class="portal-footer__inner"><div class="footer-brand"><img src="./cccav-logo.png" alt="CCCAV"><h2>Victorian Chinese Heritage Project</h2><p>Project lead by Dr. Jian Chen</p><a class="footer-organisation" href="https://www.cccav.org.au" target="_blank" rel="noopener noreferrer">Visit CCCAV ↗</a></div><nav class="footer-section" aria-label="Footer navigation"><h3>Explore</h3><a href="./people.html">People</a><a href="./places.html">Places</a><a href="./stories.html">Stories</a><a href="./portal.html">Research and corrections</a><a href="./donation.html">Support the project</a></nav><nav class="footer-section" aria-label="Research links"><h3>Research</h3><a href="./portal.html#research-method">Evidence and sources</a><a href="./cemetery-methodology.html" aria-current="page">Cemetery methodology</a><a href="./portal.html#contribution-form">Report or contribute</a></nav><div class="footer-bottom"><p><strong>Research status.</strong> This is a working compilation, not a statutory register or exhaustive history. Records may change as evidence is reviewed. Coordinates are orientation aids, not legal boundaries or permission to enter.</p><p><strong>Responsible use.</strong> Respect Aboriginal Country, private property, active places of worship, cemeteries and culturally sensitive sites. Source content and images remain subject to their custodians’ rights and terms.</p></div></div></footer>
+  <script src="./portal.js"></script>
+</body></html>
