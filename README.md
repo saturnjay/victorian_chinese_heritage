@@ -12,9 +12,9 @@ The project is a working compilation of publicly documented heritage, not a stat
 
 ## Interface languages
 
-The explorer interface supports English, Simplified Chinese (`zh-Hans`) and Traditional Chinese (`zh-Hant`). English remains the canonical language for place names and item-level research records so they can be matched to official registers and cited sources.
+Every page of the portal — the map explorer, homepage, People, Stories, Research, Donation and both cemetery pages — supports English, Simplified Chinese (`zh-Hans`) and Traditional Chinese (`zh-Hant`). Use the EN / 中文 button in the page header (or the language switch on the map page) to change language in place; the choice is remembered per browser and mirrored in the `?lang=` query parameter. English remains the canonical language for place names and item-level research records so they can be matched to official registers and cited sources.
 
-Translation wording, provenance and human-review status are recorded in [TRANSLATION_AUDIT.md](./TRANSLATION_AUDIT.md). Update the corresponding JavaScript catalogue whenever an audited translation changes.
+The shared catalogues are `i18n-zh-hans.js` and `i18n-zh-hant.js`; `i18n.js` applies them to every portal page. Translation wording, provenance and human-review status are recorded in [TRANSLATION_AUDIT.md](./TRANSLATION_AUDIT.md), which is regenerated from the catalogues by `scripts/build_translation_audit.py`. Update the corresponding JavaScript catalogue whenever an audited translation changes.
 
 ## Latest research update
 
@@ -109,6 +109,8 @@ Heritage Victoria states that its published Chinese-heritage selection is not ex
 - `portal.html` — the community correction and contribution form.
 - `donation.html` — official CCCAV donation details and the portal improvement case for support.
 - `portal-theme.css` and `portal.js` — shared portal design and navigation/form behaviour.
+- `i18n-zh-hans.js`, `i18n-zh-hant.js` and `i18n.js` — Simplified and Traditional Chinese catalogues and the shared runtime behind the header language switch.
+- `scripts/build_translation_audit.py` — regenerates `TRANSLATION_AUDIT.md` from the two language catalogues.
 - `assets/heritage-images/` — images used in the historical overview and featured interpretation.
 - `assets/verified-findings/` — local research copies of finding photographs used by the map.
 - `research_outputs/scattered_legacy_victorian_map_audit_2026-07-30.xlsx` — the Scattered Legacy comparison workbook, including the 75-record pre-addition map baseline, 112-record Victorian audit, candidate assessment, image metadata, key photographs and methodology.

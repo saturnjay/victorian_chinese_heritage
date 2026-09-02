@@ -60,6 +60,9 @@ body.home-page .portal-brand img { filter: none; }
 .language-popover[hidden] { display: none; }
 .language-popover a { display: block; padding: 9px 11px; border-radius: 9px; color: var(--ink); text-decoration: none; font-size: .8rem; }
 .language-popover a:hover { background: var(--paper); }
+.language-popover button { display: block; width: 100%; padding: 9px 11px; border: 0; border-radius: 9px; background: transparent; color: var(--ink); text-align: left; font-size: .8rem; cursor: pointer; }
+.language-popover button:hover { background: var(--paper); }
+.language-popover button[aria-pressed="true"] { background: var(--paper); font-weight: 700; }
 .menu-toggle { display: none; border: 1px solid var(--button-red-line); background: rgba(175,9,0,.18); color: white; border-radius: 999px; padding: 9px 13px; }
 .menu-toggle:hover, .menu-toggle[aria-expanded="true"] { background: var(--button-red); border-color: var(--button-red); }
 

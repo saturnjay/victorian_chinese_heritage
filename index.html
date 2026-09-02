@@ -15,7 +15,7 @@
       <button class="menu-toggle" type="button" aria-expanded="false">Menu</button>
       <div class="portal-menu">
         <a href="./people.html">People</a><a href="./places.html">Places</a><a href="./stories.html">Stories</a><a href="./portal.html">Research</a><a href="./donation.html">Donation</a>
-        <div class="language-wrap"><button class="language-button" type="button" aria-expanded="false">EN / 中文</button><div class="language-popover" hidden><a href="./index.html" lang="en">English</a><a href="./places.html?lang=zh-Hans" lang="zh-Hans">简体中文 · Map</a><a href="./places.html?lang=zh-Hant" lang="zh-Hant">繁體中文 · 地圖</a></div></div>
+        <div class="language-wrap" data-no-i18n><button class="language-button" type="button" aria-expanded="false">EN / 中文</button><div class="language-popover" hidden><button type="button" data-set-lang="en" lang="en">English</button><button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简体中文</button><button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁體中文</button></div></div>
       </div>
     </nav>
   </header>
@@ -55,6 +55,9 @@
   </main>
 
   <footer class="portal-footer portal-footer--research"><div class="portal-footer__inner"><div class="footer-brand"><img src="./cccav-logo.png" alt="CCCAV"><h2>Victorian Chinese Heritage Project</h2><p>Project lead by Dr. Jian Chen</p><a class="footer-organisation" href="https://www.cccav.org.au" target="_blank" rel="noopener noreferrer">Visit CCCAV ↗</a></div><nav class="footer-section" aria-label="Footer navigation"><h3>Explore</h3><a href="./people.html">People</a><a href="./places.html">Places</a><a href="./stories.html">Stories</a><a href="./portal.html">Research and corrections</a><a href="./donation.html">Support the project</a></nav><nav class="footer-section" aria-label="Research links"><h3>Research</h3><a href="./portal.html#research-method">Evidence and sources</a><a href="./cemetery-methodology.html">Cemetery methodology</a><a href="./portal.html#contribution-form">Report or contribute</a></nav><div class="footer-bottom"><p><strong>Research status.</strong> This is a working compilation, not a statutory register or exhaustive history. Records may change as evidence is reviewed. Coordinates are orientation aids, not legal boundaries or permission to enter.</p><p><strong>Responsible use.</strong> Respect Aboriginal Country, private property, active places of worship, cemeteries and culturally sensitive sites. Source content and images remain subject to their custodians’ rights and terms.</p></div></div></footer>
+  <script src="./i18n-zh-hans.js"></script>
+  <script src="./i18n-zh-hant.js"></script>
+  <script src="./i18n.js"></script>
   <script src="./portal.js"></script>
 </body>
 </html>

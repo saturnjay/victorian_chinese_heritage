@@ -1,4 +1,10 @@
 (() => {
+  const i18n = window.vchI18n;
+  const t = (key) => (i18n ? i18n.t(key) : key);
+  const fmt = (message, replacements = {}) => (i18n
+    ? i18n.format(message, replacements)
+    : Object.entries(replacements).reduce((text, [key, value]) => text.replaceAll(`{${key}}`, String(value)), message));
+
   const menuButton = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.portal-menu');
   const languageButton = document.querySelector('.language-button');
@@ -25,7 +31,7 @@
       menu?.classList.remove('is-open');
       menuButton?.setAttribute('aria-expanded', 'false');
     }
-    if (event.target.closest('.language-popover a')) {
+    if (event.target.closest('.language-popover a, .language-popover [data-set-lang]')) {
       languagePopover.hidden = true;
       languageButton?.setAttribute('aria-expanded', 'false');
     } else if (languagePopover && !event.target.closest('.language-wrap')) {
@@ -39,7 +45,7 @@
   const cemeteryRecordList = document.querySelector('#cemetery-record-list');
   const cemeteryRecordSummary = document.querySelector('#cemetery-record-summary');
 
-  const loadCemeteryRecords = () => {
+  const renderCemeteryRecords = ({ scrollToHash = false } = {}) => {
     if ((!cemeteryNameList || !cemeteryNameSummary) && (!cemeteryRecordList || !cemeteryRecordSummary)) return;
     try {
       const records = (window.CEMETERY_RECORDS || []).filter((record) => record.recorded_name.trim());
@@ -88,8 +94,8 @@
           if (deathYear !== null) {
             const yearLabel = document.createElement('span');
             yearLabel.className = 'death-year';
-            yearLabel.textContent = `d. ${deathYear}`;
-            yearLabel.setAttribute('aria-label', `Death year ${deathYear}`);
+            yearLabel.textContent = fmt('d. {year}', { year: deathYear });
+            yearLabel.setAttribute('aria-label', fmt('Death year {year}', { year: deathYear }));
             link.append(yearLabel);
           }
           item.append(link);
@@ -97,7 +103,10 @@
         });
         cemeteryNameList.replaceChildren(nameFragment);
         const datedCount = chronologicalRecords.filter((entry) => entry.deathYear !== null).length;
-        cemeteryNameSummary.textContent = `${records.length.toLocaleString()} sourced name records · ${datedCount.toLocaleString()} with a recorded death year · oldest to latest`;
+        cemeteryNameSummary.textContent = fmt('{count} sourced name records · {dated} with a recorded death year · oldest to latest', {
+          count: records.length.toLocaleString(),
+          dated: datedCount.toLocaleString()
+        });
       }
 
       if (cemeteryRecordList && cemeteryRecordSummary) {
@@ -152,7 +161,7 @@
             if (!record[field]) return;
             const term = document.createElement('dt');
             const description = document.createElement('dd');
-            term.textContent = label;
+            term.textContent = t(label);
             const isLinkField = field === 'source_url' || field === 'source_record_url' || field === 'related_story_url' || field.startsWith('photo_');
             const url = isLinkField ? (String(record[field]).match(/^https?:\/\//i) ? record[field] : '') : '';
             if (url) {
@@ -161,8 +170,8 @@
               link.target = '_blank';
               link.rel = 'noopener noreferrer';
               link.textContent = field.startsWith('photo_')
-                ? 'View high-resolution photograph ↗'
-                : field === 'related_story_url' ? 'Read the related story ↗' : record[field];
+                ? t('View high-resolution photograph ↗')
+                : field === 'related_story_url' ? t('Read the related story ↗') : record[field];
               description.append(link);
             } else if (isLinkField) {
               description.textContent = record[field];
@@ -175,8 +184,8 @@
           detailFragment.append(article);
         });
         cemeteryRecordList.replaceChildren(detailFragment);
-        cemeteryRecordSummary.textContent = `${records.length.toLocaleString()} complete sourced records`;
-        if (window.location.hash) {
+        cemeteryRecordSummary.textContent = fmt('{count} complete sourced records', { count: records.length.toLocaleString() });
+        if (scrollToHash && window.location.hash) {
           const selectedRecord = document.querySelector(window.location.hash);
           requestAnimationFrame(() => selectedRecord?.scrollIntoView({ block: 'start' }));
         }
@@ -184,13 +193,14 @@
     } catch (error) {
       [cemeteryNameSummary, cemeteryRecordSummary].filter(Boolean).forEach((summary) => {
         summary.classList.add('record-error');
-        summary.textContent = 'The packaged cemetery records could not be loaded.';
+        summary.textContent = t('The packaged cemetery records could not be loaded.');
       });
       console.error(error);
     }
   };
 
-  loadCemeteryRecords();
+  renderCemeteryRecords({ scrollToHash: true });
+  window.addEventListener('vch-languagechange', () => renderCemeteryRecords());
 
   const form = document.querySelector('#contribution-form');
   form?.addEventListener('submit', (event) => {
@@ -199,18 +209,18 @@
     const data = new FormData(form);
     const subject = `[Victorian Chinese Heritage] ${data.get('submission-type')}: ${data.get('title')}`;
     const body = [
-      `Submission type: ${data.get('submission-type')}`,
-      `Related page or finding: ${data.get('related-record') || 'Not supplied'}`,
-      `Name: ${data.get('name')}`,
-      `Email: ${data.get('email')}`,
+      `${t('Submission type:')} ${data.get('submission-type')}`,
+      `${t('Related page or finding:')} ${data.get('related-record') || t('Not supplied')}`,
+      `${t('Name:')} ${data.get('name')}`,
+      `${t('Email:')} ${data.get('email')}`,
       '',
       data.get('details'),
       '',
-      `Evidence or source links: ${data.get('sources') || 'Not supplied'}`
+      `${t('Evidence or source links:')} ${data.get('sources') || t('Not supplied')}`
     ].join('\n');
     const url = `mailto:cccav.committee@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     const status = document.querySelector('.form-status');
-    if (status) status.textContent = 'Your email application is opening with the submission prepared.';
+    if (status) status.textContent = t('Your email application is opening with the submission prepared.');
     window.location.href = url;
   });
 })();
