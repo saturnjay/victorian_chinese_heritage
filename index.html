@@ -5,16 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Victorian Chinese Heritage — people, places and stories across Victoria.">
   <title>Victorian Chinese Heritage Project</title>
-  <link rel="stylesheet" href="./portal-theme.css">
+  <link rel="stylesheet" href="./assets/css/portal-theme.css">
 </head>
 <body class="portal-page home-page">
+  <dialog id="review-notice" class="review-notice" aria-labelledby="review-notice-title" aria-describedby="review-notice-description" data-no-i18n>
+    <div class="review-notice__accent" aria-hidden="true"></div>
+    <div class="review-notice__content">
+      <p class="review-notice__eyebrow">Review preview</p>
+      <h2 id="review-notice-title">Website under construction</h2>
+      <p id="review-notice-description">This website is still under construction and is intended for review and demonstration purposes only. Content and features are provisional and may change.</p>
+      <form id="review-access-form">
+        <label for="review-access-code">Access code</label>
+        <input id="review-access-code" name="access-code" type="password" required autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="review-access-help review-access-error" autofocus>
+        <p id="review-access-help" class="review-notice__help">Enter the access code provided by the project team.</p>
+        <p id="review-access-error" class="review-notice__error" role="alert"></p>
+        <button class="button button--light" type="submit">Acknowledge and enter</button>
+      </form>
+    </div>
+  </dialog>
+  <noscript><p class="review-noscript">This website is under construction, for review and demonstration purposes only. Enable JavaScript to use the review access prompt.</p></noscript>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="portal-header">
     <nav class="portal-nav" aria-label="Main navigation">
-      <a class="portal-brand" href="./index.html" aria-current="page"><img src="./cccav-logo.png" alt="CCCAV"><span>Victorian Chinese Heritage Project</span></a>
+      <a class="portal-brand" href="./index.html" aria-current="page"><img src="./assets/images/cccav-logo.png" alt="CCCAV"><span>Victorian Chinese Heritage Project</span></a>
       <button class="menu-toggle" type="button" aria-expanded="false">Menu</button>
       <div class="portal-menu">
-        <a href="./people.html">People</a><a href="./places.html">Places</a><a href="./stories.html">Stories</a><a href="./portal.html">Research</a><a href="./donation.html">Donation</a>
+        <a href="./pages/people.html">People</a><a href="./pages/places.html">Places</a><a href="./pages/stories.html">Stories</a><a href="./pages/portal.html">Research</a><a href="./pages/donation.html">Donation</a>
         <div class="language-wrap" data-no-i18n><button class="language-button" type="button" aria-expanded="false">EN / 中文</button><div class="language-popover" hidden><button type="button" data-set-lang="en" lang="en">English</button><button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简体中文</button><button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁體中文</button></div></div>
       </div>
     </nav>
@@ -24,40 +40,41 @@
     <section class="portal-hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <div class="eyebrow">A statewide digital heritage portal</div>
-        <h1 id="hero-title">Victorian Chinese <span>Heritage.</span></h1>
-        <p>People, places and stories—connected across generations. Follow the evidence of Chinese life in Victoria from the gold rush to the living community of today.</p>
-        <div class="button-row"><a class="button button--light" href="./places.html">Explore places</a><a class="button" href="./people.html">Meet the people</a></div>
+        <h1 id="hero-title" data-content-id="TXT-index-001">Victorian Chinese <span>Heritage.</span></h1>
+        <p data-content-id="TXT-index-002">People, places and stories—connected across generations. Follow the evidence of Chinese life in Victoria from the gold rush to the living community of today.</p>
+        <div class="button-row"><a class="button button--light" href="./pages/places.html">Explore places</a><a class="button" href="./pages/people.html">Meet the people</a></div>
       </div>
     </section>
 
     <section class="section" aria-labelledby="history-title">
       <span class="section-kicker">A concise history · before 1851 to today</span>
-      <h2 class="section-title" id="history-title">From New Gold Mountain to a living Victorian community.</h2>
-      <p class="section-intro">Chinese Victorian history is a history of work, family, worship, resistance, enterprise and belonging. It unfolded on Aboriginal Country, within a gold rush that transformed and damaged land, waterways and First Peoples’ lives.</p>
+      <h2 class="section-title" id="history-title" data-content-id="TXT-index-003">From New Gold Mountain to a living Victorian community.</h2>
+      <p class="section-intro" data-content-id="TXT-index-004">Chinese Victorian history is a history of work, family, worship, resistance, enterprise and belonging. It unfolded on Aboriginal Country, within a gold rush that transformed and damaged land, waterways and First Peoples’ lives.</p>
       <div class="history-grid">
-        <article class="history-card"><time>Before 1851</time><h3>A presence before gold</h3><p>Chinese merchants were already in Melbourne, while Chinese workers were employed in domestic and farm labour. Gold dramatically expanded a story already begun.</p></article>
-        <article class="history-card"><time>1853–1862</time><h3>Migration and resistance</h3><p>Large numbers arrived from Guangdong. Faced with discriminatory taxes and violence, Chinese Victorians petitioned, organised and sustained a long tax-resistance campaign.</p></article>
-        <article class="history-card"><time>1860s–1901</time><h3>Community beyond mining</h3><p>Temples, societies, cemeteries and Chinatown anchored lives shaped by gardening, trade, timber, furniture, medicine, cafés and much more.</p></article>
-        <article class="history-card"><time>1901–1973</time><h3>Endurance through exclusion</h3><p>Restrictive policy constrained settlement and family reunion, yet families, associations, missions, newspapers, shops and restaurants maintained community life.</p></article>
-        <article class="history-card"><time>1973–today</time><h3>Renewal and recognition</h3><p>Later migrations reshaped the community. Museums, scholarship, festivals and heritage protection brought long-marginalised histories into public view.</p></article>
+        <article class="history-card"><time data-content-id="TXT-index-005">Before 1851</time><h3 data-content-id="TXT-index-006">A presence before gold</h3><p data-content-id="TXT-index-007">Chinese merchants were already in Melbourne, while Chinese workers were employed in domestic and farm labour. Gold dramatically expanded a story already begun.</p></article>
+        <article class="history-card"><time data-content-id="TXT-index-008">1853–1862</time><h3 data-content-id="TXT-index-009">Migration and resistance</h3><p data-content-id="TXT-index-010">Large numbers arrived from Guangdong. Faced with discriminatory taxes and violence, Chinese Victorians petitioned, organised and sustained a long tax-resistance campaign.</p></article>
+        <article class="history-card"><time data-content-id="TXT-index-011">1860s–1901</time><h3 data-content-id="TXT-index-012">Community beyond mining</h3><p data-content-id="TXT-index-013">Temples, societies, cemeteries and Chinatown anchored lives shaped by gardening, trade, timber, furniture, medicine, cafés and much more.</p></article>
+        <article class="history-card"><time data-content-id="TXT-index-014">1901–1973</time><h3 data-content-id="TXT-index-015">Endurance through exclusion</h3><p data-content-id="TXT-index-016">Restrictive policy constrained settlement and family reunion, yet families, associations, missions, newspapers, shops and restaurants maintained community life.</p></article>
+        <article class="history-card"><time data-content-id="TXT-index-017">1973–today</time><h3 data-content-id="TXT-index-018">Renewal and recognition</h3><p data-content-id="TXT-index-019">Later migrations reshaped the community. Museums, scholarship, festivals and heritage protection brought long-marginalised histories into public view.</p></article>
       </div>
     </section>
 
     <section class="map-feature" aria-labelledby="map-preview-title">
-      <div><span class="section-kicker">Interactive research map</span><h2 id="map-preview-title">History has an address.</h2><p>Search 86 documented places across Victoria, move through time, and inspect the evidence attached to every finding—from mining landscapes and temples to cemeteries, gardens and community institutions.</p><div class="button-row"><a class="button button--light" href="./places.html">Open the places explorer</a></div><div class="tiny-note">Map points are orientation aids, not statutory boundaries or permission to enter.</div></div>
-      <a class="map-frame" href="./places.html" aria-label="Open the interactive map"><img src="./media/map-interaction-demo.gif" alt="Animated preview of searching and navigating the Victorian Chinese Heritage map"></a>
+      <div><span class="section-kicker">Interactive research map</span><h2 id="map-preview-title" data-content-id="TXT-index-020">History has an address.</h2><p data-content-id="TXT-index-021">Search 86 documented places across Victoria, move through time, and inspect the evidence attached to every finding—from mining landscapes and temples to cemeteries, gardens and community institutions.</p><div class="button-row"><a class="button button--light" href="./pages/places.html">Open the places explorer</a></div><div class="tiny-note">Map points are orientation aids, not statutory boundaries or permission to enter.</div></div>
+      <a class="map-frame" href="./pages/places.html" aria-label="Open the interactive map"><img src="./assets/media/map-interaction-demo.gif" alt="Animated preview of searching and navigating the Victorian Chinese Heritage map"></a>
     </section>
 
     <section class="section stories-preview" aria-labelledby="today-title">
-      <div><span class="section-kicker">Chinese Victoria today</span><h2 class="section-title" id="today-title">A living community, not only a historic one.</h2><p class="section-intro">Chinese Victorians include descendants of nineteenth-century communities, Australian-born families and migrants from mainland China, Hong Kong, Taiwan and diasporas across Asia and beyond. No single statistic defines the community.</p><p><a class="text-link" href="./stories.html">Read the stories and turning points →</a></p></div>
-      <div class="stat-stack" aria-label="2021 Census snapshot"><div class="stat"><strong>427,467</strong><span>Victorians reported Chinese ancestry in the 2021 Census.</span></div><div class="stat"><strong>6.6%</strong><span>of Victoria’s population reported Chinese ancestry.</span></div><div class="stat"><strong>171,447</strong><span>Victorians were born in mainland China, excluding Hong Kong, Macao and Taiwan.</span></div><div class="stat"><strong>221,798</strong><span>people used Mandarin at home.</span></div></div>
+      <div><span class="section-kicker">Chinese Victoria today</span><h2 class="section-title" id="today-title" data-content-id="TXT-index-022">A living community, not only a historic one.</h2><p class="section-intro" data-content-id="TXT-index-023">Chinese Victorians include descendants of nineteenth-century communities, Australian-born families and migrants from mainland China, Hong Kong, Taiwan and diasporas across Asia and beyond. No single statistic defines the community.</p><p data-content-id="TXT-index-024"><a class="text-link" href="./pages/stories.html">Read the stories and turning points →</a></p></div>
+      <div class="stat-stack" aria-label="2021 Census snapshot"><div class="stat"><strong data-content-id="TXT-index-025">427,467</strong><span>Victorians reported Chinese ancestry in the 2021 Census.</span></div><div class="stat"><strong data-content-id="TXT-index-026">6.6%</strong><span>of Victoria’s population reported Chinese ancestry.</span></div><div class="stat"><strong data-content-id="TXT-index-027">171,447</strong><span>Victorians were born in mainland China, excluding Hong Kong, Macao and Taiwan.</span></div><div class="stat"><strong data-content-id="TXT-index-028">221,798</strong><span>people used Mandarin at home.</span></div></div>
     </section>
   </main>
 
-  <footer class="portal-footer portal-footer--research"><div class="portal-footer__inner"><div class="footer-brand"><img src="./cccav-logo.png" alt="CCCAV"><h2>Victorian Chinese Heritage Project</h2><p>Project lead by Dr. Jian Chen</p><a class="footer-organisation" href="https://www.cccav.org.au" target="_blank" rel="noopener noreferrer">Visit CCCAV ↗</a></div><nav class="footer-section" aria-label="Footer navigation"><h3>Explore</h3><a href="./people.html">People</a><a href="./places.html">Places</a><a href="./stories.html">Stories</a><a href="./portal.html">Research and corrections</a><a href="./donation.html">Support the project</a></nav><nav class="footer-section" aria-label="Research links"><h3>Research</h3><a href="./portal.html#research-method">Evidence and sources</a><a href="./cemetery-methodology.html">Cemetery methodology</a><a href="./portal.html#contribution-form">Report or contribute</a></nav><div class="footer-bottom"><p><strong>Research status.</strong> This is a working compilation, not a statutory register or exhaustive history. Records may change as evidence is reviewed. Coordinates are orientation aids, not legal boundaries or permission to enter.</p><p><strong>Responsible use.</strong> Respect Aboriginal Country, private property, active places of worship, cemeteries and culturally sensitive sites. Source content and images remain subject to their custodians’ rights and terms.</p></div></div></footer>
-  <script src="./i18n-zh-hans.js"></script>
-  <script src="./i18n-zh-hant.js"></script>
-  <script src="./i18n.js"></script>
-  <script src="./portal.js"></script>
+  <footer class="portal-footer portal-footer--research"><div class="portal-footer__inner"><div class="footer-brand"><img src="./assets/images/cccav-logo.png" alt="CCCAV"><h2>Victorian Chinese Heritage Project</h2><p>Project lead by Dr. Jian Chen</p><a class="footer-organisation" href="https://www.cccav.org.au" target="_blank" rel="noopener noreferrer">Visit CCCAV ↗</a></div><nav class="footer-section" aria-label="Footer navigation"><h3>Explore</h3><a href="./pages/people.html">People</a><a href="./pages/places.html">Places</a><a href="./pages/stories.html">Stories</a><a href="./pages/portal.html">Research and corrections</a><a href="./pages/donation.html">Support the project</a></nav><nav class="footer-section" aria-label="Research links"><h3>Research</h3><a href="./pages/portal.html#research-method">Evidence and sources</a><a href="./pages/cemetery-methodology.html">Cemetery methodology</a><a href="./pages/portal.html#contribution-form">Report or contribute</a></nav><div class="footer-bottom"><p><strong>Research status.</strong> This is a working compilation, not a statutory register or exhaustive history. Records may change as evidence is reviewed. Coordinates are orientation aids, not legal boundaries or permission to enter.</p><p><strong>Responsible use.</strong> Respect Aboriginal Country, private property, active places of worship, cemeteries and culturally sensitive sites. Source content and images remain subject to their custodians’ rights and terms.</p></div></div></footer>
+  <script src="./assets/js/i18n/i18n-zh-hans.js"></script>
+  <script src="./assets/js/i18n/i18n-zh-hant.js"></script>
+  <script src="./assets/js/i18n.js"></script>
+  <script src="./assets/js/portal.js"></script>
+  <script src="./assets/js/review-access.js"></script>
 </body>
 </html>
