@@ -1,17 +1,5 @@
 # Victorian Chinese Heritage website
 
-Static website prepared for GitHub Pages. No build step or server is required.
-
-## Deploy
-
-1. Create an empty GitHub repository.
-2. Upload the contents of this folder to the repository root, including `.nojekyll`. Keep `index.html` at the root.
-3. Open **Settings → Pages** in the repository.
-4. Choose **Deploy from a branch**, **main**, and **/(root)**, then save.
-5. GitHub will display the published URL when deployment finishes, usually `https://USERNAME.github.io/REPOSITORY/`.
-
-Official instructions: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
-
 ## Repository layout
 
 ```text
@@ -51,9 +39,3 @@ Map tiles, external sources, and external fonts require internet access. The con
 ## Attribution and existing publication limits
 
 Retain on-page sources, captions, and credits. Existing project documentation identifies photographs whose reuse permission has not been established. This snapshot preserves the referenced images and their current notices; packaging the site does not resolve those permissions. The project code licence does not grant rights to third-party images or source material.
-
-## Homepage review access
-
-Every homepage visit displays an under-construction notice stating that the website is for review and demonstration purposes only. Reviewers must acknowledge it by entering the access code. The current code is `VCH-REVIEW`; change `REVIEW_ACCESS_CODE` in `assets/js/review-access.js` to update it.
-
-This is a browser-side convenience gate, not authentication. The code is visible in the public JavaScript; direct page/data URLs remain accessible. Do not rely on it to protect confidential information. No code or approval is stored; refreshing the homepage displays the prompt again.
